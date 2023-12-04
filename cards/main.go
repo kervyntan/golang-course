@@ -17,3 +17,8 @@ func main() {
 
 	fmt.Println(card)
 }
+
+// Function that returns a string
+func newCard() string {
+	return "Five of Diamonds"
+}
