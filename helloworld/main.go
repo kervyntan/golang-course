@@ -1,5 +1,6 @@
 package main
 
+// give package main all the functionality in fmt
 import "fmt"
 
 func main() {
