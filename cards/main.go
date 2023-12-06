@@ -15,16 +15,16 @@ func main() {
 	// card := "Ace of Spades"
 	// card = "Five of Diamonds"
 
-	card := newCard()
-	cards := deck{newCard(), newCard()}
+	// card := newCard()
+	// cards := deck{newCard(), newCard()}
 
-	// adding new element to slice
-	// append returns a new slice, doesn't change the current one
-	cards = append(cards, "Six of Spades")
-
+	// // adding new element to slice
+	// // append returns a new slice, doesn't change the current one
+	// cards = append(cards, "Six of Spades")
+	cards := newDeck()
 	// Iterating over the slice of "cards"
 	cards.print()
-	fmt.Println(card)
+
 	fmt.Println(cards)
 }
 
