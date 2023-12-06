@@ -12,10 +12,22 @@ func main() {
 	// type inference to a degree
 
 	// var card string = "Ace of Spades"
-	card := "Ace of Spades"
-	card = "Five of Diamonds"
+	// card := "Ace of Spades"
+	// card = "Five of Diamonds"
 
+	card := newCard()
+	cards := []string{newCard(), newCard()}
+
+	// adding new element to slice
+	// append returns a new slice, doesn't change the current one
+	cards = append(cards, "Six of Spades")
+
+	// Iterating over the slice of "cards"
+	for i, card := range cards {
+		fmt.Println(i, card)
+	}
 	fmt.Println(card)
+	fmt.Println(cards)
 }
 
 // Function that returns a string
