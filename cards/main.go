@@ -16,7 +16,7 @@ func main() {
 	// card = "Five of Diamonds"
 
 	card := newCard()
-	cards := []string{newCard(), newCard()}
+	cards := deck{newCard(), newCard()}
 
 	// adding new element to slice
 	// append returns a new slice, doesn't change the current one
