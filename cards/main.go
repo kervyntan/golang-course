@@ -22,9 +22,13 @@ func main() {
 	// // append returns a new slice, doesn't change the current one
 	// cards = append(cards, "Six of Spades")
 	cards := newDeck()
-	// Iterating over the slice of "cards"
-	cards.print()
 
+	fakeDeck := standardDeck()
+	// Iterating over the slice of "cards"
+	// cards.print()
+
+	// fakeDeck.print()
+	fakeDeck.findSuit()
 	fmt.Println(cards)
 }
 
