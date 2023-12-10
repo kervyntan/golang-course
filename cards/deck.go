@@ -40,6 +40,8 @@ func standardDeck() deck {
 	return stdDeck
 }
 
+// Receiver functions
+// can be accessed via the use of a deck type
 func (d deck) findSuit() {
 	for _, card := range d {
 		// from index of "of", add 2 to start on the 1st character of the suit
@@ -52,4 +54,11 @@ func (d deck) print() {
 	for i, card := range d {
 		fmt.Println(i, card)
 	}
+}
+
+// Return multiple values from a function
+// return 2 values, both of TYPE deck
+func deal(d deck, handSize int) (deck, deck) {
+	// Reference diagram in Video no.24 in the course
+	return d[:handSize], d[handSize:]
 }

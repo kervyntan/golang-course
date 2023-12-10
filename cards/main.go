@@ -7,6 +7,7 @@ import "fmt"
 // because Variables can be initialized outside of a function, but cannot be assigned a variable.
 
 func main() {
+	// Arrays are pass by value, Slices are pass by reference
 	// Below 2 lines of code are EQUIVALENT
 	// second one relies on Compiler to know the type of variable
 	// type inference to a degree
@@ -29,7 +30,13 @@ func main() {
 
 	// fakeDeck.print()
 	fakeDeck.findSuit()
-	fmt.Println(cards)
+	// fmt.Println(cards)
+	cards.print()
+	hand, remainingDeck := deal(cards, 5)
+	fmt.Println("Hand:")
+	hand.print()
+	fmt.Println("Remaining of deck: ")
+	remainingDeck.print()
 }
 
 // Function that returns a string
