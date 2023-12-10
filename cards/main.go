@@ -22,21 +22,24 @@ func main() {
 	// // adding new element to slice
 	// // append returns a new slice, doesn't change the current one
 	// cards = append(cards, "Six of Spades")
-	cards := newDeck()
+	// cards := newDeck()
 
-	fakeDeck := standardDeck()
+	// fakeDeck := standardDeck()
 	// Iterating over the slice of "cards"
 	// cards.print()
 
 	// fakeDeck.print()
-	fakeDeck.findSuit()
+	// fakeDeck.findSuit()
 	// fmt.Println(cards)
-	cards.print()
-	hand, remainingDeck := deal(cards, 5)
-	fmt.Println("Hand:")
-	hand.print()
-	fmt.Println("Remaining of deck: ")
-	remainingDeck.print()
+	// cards.print()
+	// hand, remainingDeck := deal(cards, 5)
+	// fmt.Println("Hand:")
+	// hand.print()
+	// fmt.Println("Remaining of deck: ")
+	// remainingDeck.print()
+	greeting := "Hi There!"
+	// type conversion to byte slice
+	fmt.Println([]byte(greeting))
 }
 
 // Function that returns a string
