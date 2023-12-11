@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"os"
 	"strings"
+	"time"
 )
 
 /*
@@ -100,9 +102,31 @@ func newDeckFromFile(filename string) deck {
 		fmt.Println("Error: ", err)
 		// Exit argument: 0 if error-free, other value otherwise
 		os.Exit(1)
-	} else {
-		// Can look at documentation for Split
-		s := strings.Split(string(byteSlice), ",")
-		return deck(s)
+	}
+	// Can look at documentation for Split
+	s := strings.Split(string(byteSlice), ",")
+	return deck(s)
+}
+
+/*
+- Randomize order of cards in the deck
+*/
+func (d deck) shuffle() {
+	/*
+		Need to use a Seed/Source to properly randomise each time
+		Pass in int64 to NewSource
+		To ensure each time diff value, can use Now Time
+		UnixNano converts time to int64
+	*/
+	source := rand.NewSource(time.Now().UnixNano())
+	// r is of type Rand
+	r := rand.New(source)
+
+	for i := range d {
+		// Generates a random integer that is within the length of the deck
+		newPosition := r.Intn(len(d) - 1)
+
+		// one-line swap of values
+		d[i], d[newPosition] = d[newPosition], d[i]
 	}
 }
