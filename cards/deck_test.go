@@ -11,6 +11,6 @@ func TestNewDeck(t *testing.T) {
 
 	// 4 types of values, 4 suits = 4 * 4 = 16 cards
 	if len(d) != 16 {
-		t.Errorf(("Expected deck length of 16, but got %v"), len(d))
+		t.Errorf("Expected deck length of 16, but got %v", len(d))
 	}
 }
