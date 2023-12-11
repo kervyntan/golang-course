@@ -62,3 +62,11 @@ func deal(d deck, handSize int) (deck, deck) {
 	// Reference diagram in Video no.24 in the course
 	return d[:handSize], d[handSize:]
 }
+
+/*
+process deck into a string, then can turn that into byte slice
+separately in another function
+*/
+func toString() {
+
+}
