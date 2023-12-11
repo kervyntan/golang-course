@@ -88,3 +88,21 @@ func (d deck) saveToFile(filename string) error {
 	// 0666 grants all permissions to the user
 	return os.WriteFile(filename, byteSlice, 0666)
 }
+
+/*
+- Get a deck of cards from a file
+*/
+func newDeckFromFile(filename string) deck {
+	// ReadFile returns two things
+	// if success, err will have a value of nil
+	byteSlice, err := os.ReadFile(filename)
+	if err != nil {
+		fmt.Println("Error: ", err)
+		// Exit argument: 0 if error-free, other value otherwise
+		os.Exit(1)
+	} else {
+		// Can look at documentation for Split
+		s := strings.Split(string(byteSlice), ",")
+		return deck(s)
+	}
+}
