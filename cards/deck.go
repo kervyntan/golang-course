@@ -2,11 +2,14 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"strings"
 )
 
-// Create a new type of "deck"
-// which is a slice of strings (borrows behaviour from a slice of string)
+/*
+- Create a new type of "deck" which is a slice of strings
+(borrows behaviour from a slice of string)
+*/
 type deck []string
 
 func newDeck() deck {
@@ -40,8 +43,9 @@ func standardDeck() deck {
 	return stdDeck
 }
 
-// Receiver functions
-// can be accessed via the use of a deck type
+/*
+- Receiver functions can be accessed via the use of a deck type
+*/
 func (d deck) findSuit() {
 	for _, card := range d {
 		// from index of "of", add 2 to start on the 1st character of the suit
@@ -56,17 +60,31 @@ func (d deck) print() {
 	}
 }
 
-// Return multiple values from a function
-// return 2 values, both of TYPE deck
+/*
+- Return multiple values from a function
+- return 2 values, both of TYPE deck
+*/
 func deal(d deck, handSize int) (deck, deck) {
 	// Reference diagram in Video no.24 in the course
 	return d[:handSize], d[handSize:]
 }
 
 /*
-process deck into a string, then can turn that into byte slice
+- Process deck into a string, then can turn that into byte slice
 separately in another function
 */
-func toString() {
+func (d deck) toString() string {
+	// convert deck to type of string slice
+	// join the strings in the slice
+	return strings.Join([]string(d), ",")
+}
 
+/*
+- Writes a file to the directory containing cards in the deck
+*/
+func (d deck) saveToFile(filename string) error {
+	// Convert deck to byte slice
+	byteSlice := []byte(d.toString())
+	// 0666 grants all permissions to the user
+	return os.WriteFile(filename, byteSlice, 0666)
 }

@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // below line fails
 // hey := 20
 // because Variables can be initialized outside of a function, but cannot be assigned a variable.
@@ -22,7 +20,7 @@ func main() {
 	// // adding new element to slice
 	// // append returns a new slice, doesn't change the current one
 	// cards = append(cards, "Six of Spades")
-	// cards := newDeck()
+	cards := newDeck()
 
 	// fakeDeck := standardDeck()
 	// Iterating over the slice of "cards"
@@ -37,9 +35,7 @@ func main() {
 	// hand.print()
 	// fmt.Println("Remaining of deck: ")
 	// remainingDeck.print()
-	greeting := "Hi There!"
-	// type conversion to byte slice
-	fmt.Println([]byte(greeting))
+	cards.saveToFile("my_cards")
 }
 
 // Function that returns a string
